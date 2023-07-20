@@ -1,0 +1,59 @@
+// Color
+$color000: #ffffff;
+$color100: #cdd6dd;
+$color200: #a1adb9;
+$color300: #2c3844;
+$color400: #000000;
+
+// font Size
+$bigTitle: 3.5rem;
+$title: 3rem;
+$subTitle: 2rem;
+$bigParagraph: 1.3rem;
+$paragraph: 1rem;
+$small: 0.7rem;
+
+//transition
+$superFast: all ease-in-out 0.1s;
+$fast: all ease-in-out 0.3s;
+$medium: all ease-in-out 0.5s;
+$slow: all ease-in-out 0.7s;
+$superSlow: all ease-in-out 1s;
+
+@mixin flex($flex, $just, $align, $gap) {
+  display: flex;
+  flex-direction: $flex;
+  justify-content: $just;
+  align-items: $align;
+  gap: $gap;
+}
+
+@mixin size($width, $height, $padding) {
+  width: $width;
+  height: $height;
+  padding: $padding;
+}
+
+@mixin grid($width, $fr, $gap) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($width, $fr));
+  gap: $gap;
+}
+
+@mixin button($size) {
+  padding: 0.5rem 3rem;
+  font-size: $size;
+  background-color: $color400;
+  color: $color100;
+  border: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  transition: $fast;
+  cursor: pointer;
+
+  &:hover {
+    transition: $fast;
+    color: $color400;
+    background-color: $color100;
+  }
+}

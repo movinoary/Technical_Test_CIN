@@ -1,0 +1,106 @@
+@import "./Variable.scss";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+h1,
+p {
+  cursor: default;
+}
+
+.page-home {
+  @include size(100vw, 100vh, 0);
+  @include flex(column, center, center, 5rem);
+
+  h1 {
+    font-size: $title;
+    text-transform: uppercase;
+    color: $color300;
+  }
+
+  figure {
+    @include size(400px, 170px, 0 1rem);
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 7px 7px rgba($color: $color200, $alpha: 0.3);
+    img {
+      @include size(100%, 100%, 0);
+    }
+  }
+
+  .row {
+    @include flex(column, center, center, 10px);
+  }
+
+  .menu {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: $paragraph;
+    font-weight: 500;
+    border-bottom: 3px solid rgba($color: $color200, $alpha: 0.5);
+  }
+}
+
+.page-content {
+  padding: 3% 10%;
+  @include flex(column, flex-start, center, 3rem);
+
+  .top {
+    width: 50%;
+    min-width: 300px;
+    text-align: center;
+    h1 {
+      font-size: $subTitle;
+      text-transform: uppercase;
+      color: $color300;
+      margin-bottom: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 5px 15px;
+      border-radius: 5px;
+      border: 3px solid rgba($color: $color200, $alpha: 0.5);
+      font-size: $paragraph;
+      outline: none;
+
+      &::placeholder {
+        color: $color200;
+      }
+    }
+  }
+
+  .row {
+    width: 100%;
+    @include grid(350px, 1fr, 3rem);
+
+    figure {
+      @include flex(column, center, center, 5rem);
+      @include size(100%, 200px, 0);
+      position: relative;
+      border: 2px solid $color200;
+      p {
+        position: absolute;
+        z-index: 2;
+        font-size: $subTitle;
+      }
+      img {
+        @include size(100%, 100%, 0);
+        z-index: 5;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 1476px) {
+  .page-content {
+    .row {
+      @include grid(300px, 1fr, 1.5rem);
+    }
+  }
+}
