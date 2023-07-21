@@ -33,13 +33,18 @@ const GipIronMan = () => {
         <h1>iron man giphy</h1>
       </div>
       <div className="row">
-        {data
-          ? data.map((item, index) => (
-              <figure key={index}>
-                <img src={item.images.original.url} alt={item.title} />
-              </figure>
-            ))
-          : null}
+        {data ? (
+          data.map((item, index) => (
+            <figure key={index}>
+              <p>GIF</p>
+              <img src={item.images.original.url} alt={item.title} />
+            </figure>
+          ))
+        ) : (
+          <div className="information">
+            <h1>Loading...</h1>
+          </div>
+        )}
       </div>
     </section>
   );

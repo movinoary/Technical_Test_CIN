@@ -94,6 +94,15 @@ p {
         z-index: 5;
       }
     }
+
+    .information {
+      @include size(100%, 50vh, 0);
+      @include flex(column, center, center, 0);
+      h1 {
+        font-size: $subTitle;
+        text-transform: capitalize;
+      }
+    }
   }
 }
 
